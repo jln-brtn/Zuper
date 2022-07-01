@@ -1,0 +1,33 @@
+service: gestion.moncitron.fr_back
+configValidationMode: off
+provider:
+  name: scaleway
+  runtime: nodejs16.x
+  scwToken: <scw-token>
+  scwProject: <scw-project-id>
+  scwRegion: fr-par
+
+plugins:
+  - serverless-offline
+  - serverless-scaleway-functions
+  - serverless-plugin-typescript
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+    host: "localhost"
+    prefix: ""
+
+package:
+  patterns:
+    - "!.gitignore"
+    - "!.git/**"
+    - "src"
+
+functions:
+  handler:
+    handler: src/core/Router/SuperHandler.handle
+    events:
+      - http:
+          path: /{any+}
+          method: any
