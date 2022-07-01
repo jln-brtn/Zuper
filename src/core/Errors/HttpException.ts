@@ -1,6 +1,6 @@
 import { RequestStore } from "../common";
 import { Logger } from "../Logs/Logger";
-import { HttpStatus } from "../models/HttpStatus";
+import { HttpStatus } from "../Models/HttpStatus";
 
 export class HttpException extends Error{
   constructor(message: string, httpStatus: HttpStatus) {

@@ -8,7 +8,7 @@ export * from './Middlewares/BodyValidator.guard'
 export * from './Middlewares/HeaderValidator.guard'
 
 //Models
-export * from './models/HttpStatus'
+export * from './Models/HttpStatus'
 
 //Router
 export * from './Router/RequestStore'
